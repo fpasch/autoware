@@ -1,0 +1,38 @@
+<!-- -->
+<launch>
+  <arg name='host' default='localhost'/>
+  <arg name='port' default='2000'/>
+  <arg name="vehicle_filter" default="vehicle.toyota.prius*" />
+
+  <!--
+    #################
+    # CARLA Clients #
+    #################
+  -->
+  <!-- ros-bridge -->
+  <include file="$(find carla_ros_bridge)/launch/carla_ros_bridge.launch">
+    <arg name='host' value='$(arg host)'/>
+    <arg name='port' value='$(arg port)'/>
+  </include>
+
+  <!-- carla autoware ego vehicle -->
+  <include file="$(find carla_autoware_ego_vehicle)/launch/carla_autoware_ego_vehicle.launch" >
+    <arg name='host' value='$(arg host)'/>
+    <arg name='port' value='$(arg port)'/>
+    <arg name='vehicle_filter' value='$(arg vehicle_filter)'/>
+  </include>
+
+  <!-- mission planning -->
+  <include file="$(find carla_waypoint_publisher)/launch/carla_waypoint_publisher.launch" >
+    <arg name='host' value='$(arg host)'/>
+    <arg name='port' value='$(arg port)'/>
+  </include>
+
+  <!--
+    ##############################
+    # ROS remapping + conversion #
+    ##############################
+  -->
+  <include file="$(find carla_autoware_bridge)/launch/carla_autoware_bridge_common.launch"/>
+</launch>
+
