@@ -1897,6 +1897,17 @@
                                                     <label>LGSVL Simulator</label>
                                                 </object>
                                             </object>
+                                            <object class="sizeritem">
+                                                <option>0</option>
+                                                <border>4</border>
+                                                <flag>wxALL</flag>
+                                                <object class="wxToggleButton" name="button_carla_sim" base="EditToggleButton">
+                                                    <events>
+                                                        <handler event="EVT_TOGGLEBUTTON">OnLaunchKill</handler>
+                                                    </events>
+                                                    <label>Carla Simulator</label>
+                                                </object>
+                                            </object>
                                         </object>
 
                                     </object>

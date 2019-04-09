@@ -29,6 +29,10 @@ buttons:
     run : sh -c "rosrun lgsvl_simulator_bridge rqt_lgsvl_simulator_configurator"
     gui :
       flags : [ kill_children ]
+  carla_sim :
+    run : sh -c "roslaunch carla_autoware_bridge carla_autoware_bridge_with_manual_control.launch"
+    gui :
+      flags : [ kill_children ]
 
 params :
   - name  : rosbag_play
