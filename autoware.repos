@@ -47,3 +47,7 @@ repositories:
     type: git
     url: https://github.com/CPFL/car_demo.git
     version: e364448fad421cb6244c9f828f978d8d877dcbf9
+  ros/src/simulation/carla_simulator/carla_ros_bridge:
+    type: git
+    url: https://github.com/carla-simulator/ros-bridge
+    version: f2f487ae12b79d7668a13bb30dadebf6b7d41bde
